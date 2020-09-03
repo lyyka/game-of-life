@@ -43,7 +43,7 @@ int exists_in_cache(int m[ROWS][COLS], int* cache[], int n){
     int exists = 0;
 
     int i;
-    for(i = 0; i < n && !exists; i++){
+    for(i = n - 1; i >= 0 && !exists; i--){
         exists = memcmp(m, cache[i], ROWS * COLS * sizeof(int)) == 0;
     }
 
